@@ -1,11 +1,14 @@
 package com.example.demosql;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -68,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
         ListView listViewDatos = findViewById(R.id.lista_estudiantes);
         listViewDatos.setAdapter(adapter);
 
+        //boton agregar
+        Button boton_agregar = findViewById(R.id.boton_agregar);
+        boton_agregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AgregarActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
